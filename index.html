@@ -22,16 +22,7 @@
 	        }
 	    }
 	    xhttp.open("GET", "https://corporateclash.net/api/v1/districts.js", true);
-		xhttp.send();
-		setTimeout(function() {
-			myWindow = window.open("https://corporateclash.net/api/v1/districts.js");
-			setTimeout(function() {
-				myWindow.location.reload();
-				setTimeout(function() {
-					myWindow.close();
-				}, 2000);
-			}, 2000);
-		}, 10000);
+	    xhttp.send();	
 	}
 </script>
 </body>
