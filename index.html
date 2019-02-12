@@ -3,14 +3,10 @@
 <head>
 	<title>Toontown</title>
 </head>
-<body onload="tracker(); update();">
+<body onload="tracker()">
 <center><span id="testOutput"></span></center>
 <script type="text/javascript">
 	var xhttp = new XMLHttpRequest();
-
-	function update() {
-		setInterval(tracker(), 60000);
-	}
 
 	function tracker() {
 		xhttp.onreadystatechange = function() {
@@ -27,6 +23,15 @@
 	    }
 	    xhttp.open("GET", "https://corporateclash.net/api/v1/districts.js", true);
 		xhttp.send();
+		setTimeout(function() {
+			myWindow = window.open("https://corporateclash.net/api/v1/districts.js");
+			setTimeout(function() {
+				myWindow.location.reload();
+				setTimeout(function() {
+					myWindow.close();
+				}, 2000);
+			}, 2000);
+		}, 10000);
 	}
 </script>
 </body>
